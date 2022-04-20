@@ -1,23 +1,31 @@
 <script>
+import ReaderPdf from './ReaderOfPdf.vue';
+import ReaderVedio from './ReaderOfVedio.vue';
+import * as data from './data.js';
 export default {
   name:'ReaderPage',
   components: {
+    ReaderPdf, ReaderVedio,
   },
   props: {
+    readerApi:Object,
+    readType:[String, Number],
   },
+  computed:{
+    isReadingPdf(){
+      const vue = this;
+      return vue.readType == data.readTypeEnum.pdf.key;
+    },
+    isReadingVedio(){
+      const vue = this;
+      return vue.readType == data.readTypeEnum.vedio.key;
+    },
+  }
 }
 </script>
 <template>
-<div class="reader-page">
-  <header>header</header>
-</div>
+<reader-pdf v-if="isReadingPdf" />
+<reader-vedio v-if="isReadingVedio" />
 </template>
 <style>
-.reader-page {
-  height:100%;
-  width:100%;
-  background-color:rgba(0,0,0, 0.05);
-  display:flex;
-  flex-direction:column;
-}  
 </style>
