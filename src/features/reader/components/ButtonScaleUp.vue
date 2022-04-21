@@ -1,13 +1,11 @@
 <script>
 import * as data from '../data.js';
 export default {
-  name:'PageContainer',
+  name:'ButtonScaleUp',
 }
 </script>
 <template>
-<div class="page-container">
-
-</div>
+some
 </template>
 <style>
 
