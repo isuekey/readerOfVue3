@@ -1,11 +1,8 @@
 <script>
-import ReaderPdf from './ReaderOfPdf.vue';
-import ReaderVedio from './ReaderOfVedio.vue';
 import * as data from './data.js';
 export default {
   name:'ReaderPage',
   components: {
-    ReaderPdf, ReaderVedio,
   },
   props: {
     readerApi:Object,
@@ -24,8 +21,7 @@ export default {
 }
 </script>
 <template>
-<reader-pdf v-if="isReadingPdf" />
-<reader-vedio v-if="isReadingVedio" />
+<router-view></router-view>
 </template>
 <style>
 </style>
